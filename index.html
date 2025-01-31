@@ -6,96 +6,67 @@
     <title>Поиск работы</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #dfe4ea, #a4c2f4);
+            font-family: 'Segoe Print', sans-serif;
+            background: linear-gradient(to bottom, #dfe6e9, #a2c1e8);
+            background-image: url('https://habrastorage.org/getpro/habr/post_images/98b/7a6/29b/98b7a629bd5f82ae8999c9369050c384.jpg');
+            background-size: cover;
+            background-position: center;
             color: #333;
             text-align: center;
-            margin: 0;
-            padding: 0;
         }
         .container {
-            width: 80%;
-            margin: 0 auto;
+            max-width: 800px;
+            margin: auto;
             padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         h1, h2 {
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-        }
-        .features, .resume, .reviews {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .block {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 15px;
-            border-radius: 10px;
-            width: 30%;
-        }
-        .telegram-link img {
-            width: 100px;
-            cursor: pointer;
-        }
-        form {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            text-align: left;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #2d3436;
         }
         input, select {
             width: 100%;
-            padding: 5px;
-            margin-top: 5px;
-        }
-        button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #4a69bd;
-            color: white;
+            padding: 10px;
+            margin: 5px 0;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .feature-box {
+            width: 30%;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .telegram-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background: #0088cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Найди работу или подработку своей мечты!</h1>
-        <h2>Удобная платформа для поиска работы и подработки.</h2>
+        <h2>Удобная платформа для поиска работы и подработки. Простая регистрация, быстрые отклики, реальный результат.</h2>
+        <p>Выбирайте вакансии рядом с домом, с достойной оплатой и гибкими условиями.</p>
         
+        <h2>Почему выбирают нас?</h2>
         <div class="features">
-            <div class="block">Удобный поиск: Фильтры по зарплате, графику и местоположению.</div>
-            <div class="block">Моментальные отклики: Быстрая связь с работодателем или кандидатом.</div>
-            <div class="block">Поддержка 24/7: Мы всегда готовы помочь с вопросами.</div>
-        </div>
+            <div class="feature-box">Удобный поиск<br>Фильтры по зарплате, графику и местоположению.</div>
+            <div class="feature-box">Моментальные отклики<br>Быстрая связь с работодателем или кандидатом.</div>
+            <div class="feature-box">Поддержка 24/7<br>Мы всегда готовы помочь с вопросами.</div>
         
-        <h2>Заполни резюме или переходи в наш</h2>
-        <a href="#"><div class="telegram-link"><img src="telegram.png" alt="Телеграм Бот"></div></a>
-        
-        <form>
-            <label>Имя: <input type="text"></label>
-            <label>Контактный номер телефона: <input type="text"></label>
-            <label>Email: <input type="email"></label>
-            <label>Город проживания: <input type="text"></label>
-            <label>Район проживания: <input type="text"></label>
-            <label>Готовность к переезду: <select><option>Да</option><option>Нет</option></select></label>
-            <label>Готовность к командировкам: <select><option>Да</option><option>Нет</option></select></label>
-            <label>Тип занятости: <select><option>Основная работа</option><option>Подработка</option></select></label>
-            <label>Желаемый уровень зарплаты (мин-макс): <input type="text"></label>
-            <button type="submit">Отправить</button>
-        </form>
-        
-        <h2>Отзывы наших пользователей</h2>
-        <div class="reviews">
-            <div class="block">"Нашел работу мечты за 2 дня!"</div>
-            <div class="block">"Очень удобный сервис, рекомендую!"</div>
-            <div class="block">"Помогли найти подработку рядом с домом."</div>
-        </div>
-    </div>
-</body>
-</html>
