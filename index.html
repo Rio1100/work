@@ -3,206 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Одна платформа для всех вакансий</title>
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+Print&display=swap" rel="stylesheet">
+    <title>Одна платформа для вакансий</title>
     <style>
-        /* Общие стили */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe Print', cursive;
+            font-family: 'Segoe Print', sans-serif;
+            background: #f0f0f0;
             color: #333;
         }
 
-        /* Фон с текстурой */
-        .background {
-            background-image: url('https://habrastorage.org/getpro/habr/post_images/98b/7a6/29b/98b7a629bd5f82ae8999c9369050c384.jpg');
+        .container {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(to bottom, #dcdcdc, #a6c8ff);
+            background-image: url('https://tatarstan.ru/file/news/33_n1983747_big.jpg');
             background-size: cover;
             background-position: center;
-            position: relative;
-            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            background-attachment: fixed;
         }
 
-        /* Градиентный фон */
-        .gradient-background {
-            background: linear-gradient(to bottom right, #d1d1d1, #a7c6e2);
+        .text-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: -1;
+            background: rgba(255, 255, 255, 0.6);
+            z-index: 1;
         }
 
-        /* Хедер */
-        .header {
-            font-size: 2.5rem;
+        h1 {
+            font-family: 'Segoe Print', sans-serif;
             font-weight: bold;
-            text-align: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 2rem;
+            color: black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+
+        h2 {
+            font-family: 'Segoe Print', sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #808080;
+            text-shadow: 2px 2px 4px rgba(169, 169, 169, 0.6);
+            z-index: 2;
             margin-bottom: 20px;
         }
 
-        .sub-header {
-            font-size: 1.5rem;
-            text-align: center;
-            color: white;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        .cta-buttons {
+            z-index: 2;
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        /* Секции */
+        .cta-buttons a {
+            background-color: #a6c8ff;
+            padding: 10px 30px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #75a4c8;
+        }
+
         .section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            width: 90%;
+            max-width: 1200px;
             margin-top: 50px;
             text-align: center;
+            color: black;
         }
 
-        .section h2 {
+        .section h3 {
+            font-weight: bold;
             font-size: 2rem;
             margin-bottom: 30px;
-            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        .features, .reviews {
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: left;
+            margin: 10px 0;
+        }
+
+        .section .features {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             gap: 20px;
-            flex-wrap: wrap;
+            margin-top: 50px;
         }
 
-        .feature, .review {
-            background-color: rgba(255, 255, 255, 0.7);
+        .features .feature {
+            background: #f0f0f0;
             padding: 20px;
             border-radius: 10px;
-            flex-basis: 30%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
 
-        .feature h3, .review h3 {
-            font-weight: bold;
-            color: #4a4a4a;
-        }
-
-        .feature p, .review p {
-            color: #777;
-        }
-
-        /* Кнопка */
-        .btn {
-            background-color: #a7c6e2;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
+        footer {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 30px 20px;
             text-align: center;
         }
 
-        .btn:hover {
-            background-color: #8ab1c3;
+        footer .testimonial {
+            width: 30%;
+            background: #a6c8ff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        /* Форма */
-        .input-field {
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            font-size: 1rem;
-            border-radius: 25px;
-            border: 2px solid #d1d1d1;
-            background-color: rgba(255, 255, 255, 0.6);
-            font-weight: bold;
-            color: #555;
+        footer .testimonial p {
+            font-style: italic;
         }
 
-        /* Адаптивность */
-        @media screen and (max-width: 768px) {
-            .features, .reviews {
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features {
                 flex-direction: column;
             }
 
-            .feature, .review {
-                flex-basis: 100%;
+            footer {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .header {
-                font-size: 2rem;
-            }
-
-            .sub-header {
-                font-size: 1.2rem;
-            }
-
-            .input-field {
-                font-size: 0.9rem;
-            }
-
-            .btn {
-                font-size: 1rem;
+            footer .testimonial {
+                width: 90%;
+                margin-bottom: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="background">
-        <div class="gradient-background"></div>
+<div class="container">
+    <div class="text-overlay"></div>
+    <h1>Одна платформа, обьединяющая все вакансии!</h1>
+    <h2>Устал отправлять резюме в десятки компаний с разных сайтов? Просто оставь заявку и работа найдет тебя сама.</h2>
 
-        <!-- Хедер -->
-        <h1 class="header">Одна платформа, обьединяющая все вакансии!</h1>
-        <p class="sub-header">Устал отправлять резюме в десятки компаний с разных сайтов? Просто оставь заявку и работа найдет тебя сама.</p>
-
-        <!-- Главная секция -->
-        <div class="section">
-            <h2>Почему выбирают нас?</h2>
-            <div class="features">
-                <div class="feature">
-                    <h3>Удобный поиск</h3>
-                    <p>Фильтры по зарплате, графику и местоположению.</p>
-                </div>
-                <div class="feature">
-                    <h3>Мы поможем найти вакансии</h3>
-                    <p>Мы поможем найти вакансии, которые подходят вашему графику, навыкам и запросам.</p>
-                </div>
-                <div class="feature">
-                    <h3>Работа рядом с домом</h3>
-                    <p>Выбирайте из предложений рядом с домом, с достойной оплатой и гибкими условиями.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Форма -->
-        <input type="text" class="input-field" placeholder="Оставь заявку здесь" />
-
-        <!-- Футер -->
-        <div class="reviews">
-            <div class="review">
-                <h3>Алексей, Москва</h3>
-                <p>Очень удобная платформа, нашел работу быстро и без лишних усилий!</p>
-            </div>
-            <div class="review">
-                <h3>Елена, Санкт-Петербург</h3>
-                <p>Платформа помогла мне найти гибкую работу с отличной оплатой.</p>
-            </div>
-            <div class="review">
-                <h3>Иван, Новосибирск</h3>
-                <p>Заявка была обработана быстро, и я уже на новой работе!</p>
-            </div>
-        </div>
-
-        <!-- Кнопка -->
-        <button class="btn">Получить предложение</button>
+    <div class="cta-buttons">
+        <a href="#">Заполни анкету</a>
+        <a href="#">Телеграм бот</a>
     </div>
+</div>
+
+<div class="section">
+    <h3>Почему выбирают нас?</h3>
+    <div class="features">
+        <div class="feature">
+            <h4>Удобный поиск</h4>
+            <p>Фильтры по зарплате, графику и местоположению.</p>
+        </div>
+        <div class="feature">
+            <h4>Гибкость</h4>
+            <p>Мы поможем найти вакансии, которые подходят вашему графику, навыкам и запросам.</p>
+        </div>
+        <div class="feature">
+            <h4>Удобное местоположение</h4>
+            <p>Выбирайте из предложений рядом с домом, с достойной оплатой и гибкими условиями.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="testimonial">
+        <p>"Я нашел отличную работу с гибким графиком. Спасибо за помощь!"</p>
+        <strong>Иван П.</strong>
+    </div>
+    <div class="testimonial">
+        <p>"Просто заполнил анкету, и работа сама меня нашла!"</p>
+        <strong>Мария К.</strong>
+    </div>
+    <div class="testimonial">
+        <p>"Удобно и быстро, идеальный сервис для поиска работы."</p>
+        <strong>Александр С.</strong>
+    </div>
+</footer>
 
 </body>
 </html>
