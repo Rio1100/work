@@ -3,205 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Платформа поиска работы</title>
+    <title>Поиск работы</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #dfe4ea, #a4c2f4);
+            color: #333;
+            text-align: center;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, white, #cce4f7);
-            color: #333;
         }
-        .header {
-            text-align: center;
-            padding: 50px 20px;
-            background: #e6f2fb;
-        }
-        .header h1 {
-            font-size: 2.5rem;
-            color: #2b579a;
-        }
-        .header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-        }
-        .why-choose-us {
-            text-align: center;
-            padding: 50px 20px;
-            background: white;
-        }
-        .why-choose-us h2 {
-            font-size: 2rem;
-            color: #2b579a;
-        }
-        .features {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-        .feature {
-            background: #e6f2fb;
-            border-radius: 10px;
+        .container {
+            width: 80%;
+            margin: 0 auto;
             padding: 20px;
+        }
+        h1, h2 {
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+        .features, .resume, .reviews {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .block {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
             width: 30%;
-            min-width: 200px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 10px;
         }
-        .feature h3 {
-            color: #2b579a;
-        }
-        .form-section {
-            padding: 50px 20px;
-            background: #f8fbfd;
-        }
-        .form-section h2 {
-            text-align: center;
-            color: #2b579a;
-            margin-bottom: 30px;
+        .telegram-link img {
+            width: 100px;
+            cursor: pointer;
         }
         form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-        }
-        form label {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        form input, form select, form textarea {
-            margin-top: 5px;
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        form input[type="submit"] {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
             margin-top: 20px;
-            background: #2b579a;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #4a69bd;
             color: white;
             border: none;
-            cursor: pointer;
-            padding: 15px;
-            font-size: 1rem;
             border-radius: 5px;
-        }
-        form input[type="submit"]:hover {
-            background: #1e3f6b;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Найди работу своей мечты или надёжных сотрудников уже сегодня!</h1>
-        <p>Удобная платформа для поиска работы и подработки. Простая регистрация, быстрые отклики, реальный результат.</p>
-        <p>Ищете работу? Мы поможем найти вакансии, которые подходят вашему графику, навыкам и запросам.</p>
-    </header>
-
-    <section class="why-choose-us">
-        <h2>Почему выбирают нас?</h2>
+    <div class="container">
+        <h1>Найди работу или подработку своей мечты!</h1>
+        <h2>Удобная платформа для поиска работы и подработки.</h2>
+        
         <div class="features">
-            <div class="feature">
-                <h3>Удобный поиск</h3>
-                <p>Фильтры по зарплате, графику и местоположению.</p>
-            </div>
-            <div class="feature">
-                <h3>Моментальные отклики</h3>
-                <p>Быстрая связь с работодателем или кандидатом.</p>
-            </div>
-            <div class="feature">
-                <h3>Поддержка 24/7</h3>
-                <p>Мы всегда готовы помочь с вопросами.</p>
-            </div>
+            <div class="block">Удобный поиск: Фильтры по зарплате, графику и местоположению.</div>
+            <div class="block">Моментальные отклики: Быстрая связь с работодателем или кандидатом.</div>
+            <div class="block">Поддержка 24/7: Мы всегда готовы помочь с вопросами.</div>
         </div>
-    </section>
-
-    <section class="form-section">
-        <h2>Опросник для резюме</h2>
-        <form action="#" method="post">
-            <!-- Общая информация -->
-            <label for="name">Имя:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="phone">Контактный номер телефона:</label>
-            <input type="text" id="phone" name="phone" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <!-- Город и район проживания -->
-            <label for="city">Город проживания:</label>
-            <input type="text" id="city" name="city" required>
-
-            <label for="district">Район проживания:</label>
-            <input type="text" id="district" name="district">
-
-            <label>Готовность к переезду:</label>
-            <select name="relocation" required>
-                <option value="yes">Да</option>
-                <option value="no">Нет</option>
-            </select>
-
-            <label>Готовность к командировкам:</label>
-            <select name="business_trips" required>
-                <option value="yes">Да</option>
-                <option value="no">Нет</option>
-            </select>
-
-            <!-- Тип занятости -->
-            <label>Ищете работу как:</label>
-            <select name="job_type" required>
-                <option value="full_time">Основная работа</option>
-                <option value="part_time">Подработка / частичная занятость</option>
-            </select>
-
-            <label>Предпочитаемый график:</label>
-            <select name="schedule" required>
-                <option value="full_day">Полный рабочий день</option>
-                <option value="part_day">Неполный рабочий день</option>
-                <option value="shift">Сменный график</option>
-                <option value="remote">Удаленная работа</option>
-                <option value="flexible">Гибкий график</option>
-            </select>
-
-            <label>Возможность работать в выходные дни:</label>
-            <select name="weekend_work" required>
-                <option value="yes">Да</option>
-                <option value="no">Нет</option>
-            </select>
-
-            <label>Возможность работать в ночное время:</label>
-            <select name="night_work" required>
-                <option value="yes">Да</option>
-                <option value="no">Нет</option>
-            </select>
-
-            <!-- Зарплатные ожидания -->
-            <label for="salary_min">Минимальный уровень зарплаты (руб):</label>
-            <input type="number" id="salary_min" name="salary_min" required>
-
-            <label for="salary_max">Максимальный уровень зарплаты (руб):</label>
-            <input type="number" id="salary_max" name="salary_max" required>
-
-            <!-- Навыки и предпочтения -->
-            <label>К каким профессиональным сферам вы относите свои навыки?</label>
-            <select name="skills" required>
-                <option value="it">IT</option>
-                <option value="sales">Продажи</option>
-                <option value="marketing">Маркетинг</option>
-                <option value="logistics">Логистика</option>
-                <option value="education">Образование</option>
-                <option value="medical">Медицинская сфера</option>
-                <option value="other">Другое</option>
-            </select>
-
-            <label for="positions">Какие должности или виды работ вас интересуют?</label>
-            <textarea id="positions" name="positions" rows="3"></textarea>
-
-            <input type="submit" value="Отправить резюме">
+        
+        <h2>Заполни резюме или переходи в наш</h2>
+        <a href="#"><div class="telegram-link"><img src="telegram.png" alt="Телеграм Бот"></div></a>
+        
+        <form>
+            <label>Имя: <input type="text"></label>
+            <label>Контактный номер телефона: <input type="text"></label>
+            <label>Email: <input type="email"></label>
+            <label>Город проживания: <input type="text"></label>
+            <label>Район проживания: <input type="text"></label>
+            <label>Готовность к переезду: <select><option>Да</option><option>Нет</option></select></label>
+            <label>Готовность к командировкам: <select><option>Да</option><option>Нет</option></select></label>
+            <label>Тип занятости: <select><option>Основная работа</option><option>Подработка</option></select></label>
+            <label>Желаемый уровень зарплаты (мин-макс): <input type="text"></label>
+            <button type="submit">Отправить</button>
         </form>
-    </section>
+        
+        <h2>Отзывы наших пользователей</h2>
+        <div class="reviews">
+            <div class="block">"Нашел работу мечты за 2 дня!"</div>
+            <div class="block">"Очень удобный сервис, рекомендую!"</div>
+            <div class="block">"Помогли найти подработку рядом с домом."</div>
+        </div>
+    </div>
 </body>
 </html>
