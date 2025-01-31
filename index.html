@@ -3,146 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Поиск работы и подработки</title>
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+Print&display=swap" rel="stylesheet">
+    <title>Работа найдёт тебя</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background: linear-gradient(to bottom, #dce6f1, #b0c4de);
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        .subheader {
-            font-size: 18px;
-            margin: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        .features {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .feature {
-            width: 30%;
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-        }
-        .form-container {
-            margin-top: 20px;
-            background: url('https://habrastorage.org/getpro/habr/post_images/98b/7a6/29b/98b7a629bd5f82ae8999c9369050c384.jpg') no-repeat center center;
-            background-size: cover;
-            padding: 20px;
-            border-radius: 10px;
-            opacity: 0.9;
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 20px;
-            border: 1px solid #ccc;
-        }
-        .telegram-link {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px;
-        }
-        .telegram-link img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-        }
-        .reviews {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .review {
-            width: 30%;
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(to bottom, #dfe7f2, #b3c7e6);
             font-family: 'Segoe Print', sans-serif;
+        }
+        .blurred-bg {
+            background: url('https://habrastorage.org/getpro/habr/post_images/98b/7a6/29b/98b7a629bd5f82ae8999c9369050c384.jpg') center/cover;
+            filter: blur(5px);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .shadow-text {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .input-field {
+            border-radius: 15px;
+            background: transparent;
+            border: 2px solid white;
+            padding: 10px;
+            font-weight: bold;
+            color: white;
         }
     </style>
 </head>
-<body>
-    <header>Найди работу или подработку своей мечты!</header>
-    <p class="subheader">Удобная платформа для поиска работы и подработки. Простая регистрация, быстрые отклики, реальный результат.</p>
-    <div class="container">
-        <h2>Почему выбирают нас?</h2>
-        <div class="features">
-            <div class="feature">Удобный поиск: Фильтры по зарплате, графику и местоположению.</div>
-            <div class="feature">Моментальные отклики: Быстрая связь с работодателем или кандидатом.</div>
-            <div class="feature">Поддержка 24/7: Мы всегда готовы помочь с вопросами.</div>
-        </div>
-    </div>
+<body class="relative text-center text-white">
+    <div class="blurred-bg"></div>
     
-    <div class="form-container">
-        <h3>Заполни резюме или переходи в наш</h3>
-        <div class="telegram-link">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
-            <a href="#">Телеграм-бот</a>
-        </div>
-        <form>
-            <h4>1. Общая информация</h4>
-            <input type="text" placeholder="Имя">
-            <input type="text" placeholder="Контактный номер телефона">
-            <input type="email" placeholder="Email">
-            
-            <h4>2. Город и район проживания</h4>
-            <input type="text" placeholder="Город проживания">
-            <input type="text" placeholder="Район проживания">
-            <select>
-                <option>Готовность к переезду: Да</option>
-                <option>Нет</option>
-            </select>
-            <select>
-                <option>Готовность к командировкам: Да</option>
-                <option>Нет</option>
-            </select>
-            
-            <h4>3. Тип занятости</h4>
-            <select>
-                <option>Основная работа</option>
-                <option>Подработка / частичная занятость</option>
-            </select>
-            <select>
-                <option>Полный рабочий день</option>
-                <option>Неполный рабочий день</option>
-                <option>Сменный график</option>
-                <option>Удаленная работа</option>
-                <option>Гибкий график</option>
-            </select>
+    <header class="p-6 text-xl font-bold shadow-text">Одна платформа, объединяющая все вакансии!</header>
+    <p class="text-lg shadow-text px-4">Устал отправлять резюме в десятки компаний с разных сайтов? Просто оставь заявку, и работа найдёт тебя сама.</p>
+    
+    <section class="flex justify-center mt-8">
+        <form class="bg-white bg-opacity-20 p-6 rounded-lg backdrop-blur-lg">
+            <input type="text" placeholder="Имя" class="block w-64 mb-4 input-field">
+            <input type="text" placeholder="Город" class="block w-64 mb-4 input-field">
+            <input type="text" placeholder="Желаемая зарплата" class="block w-64 mb-4 input-field">
+            <button class="bg-blue-500 text-white px-6 py-2 rounded-lg">Оставить заявку</button>
         </form>
-    </div>
+    </section>
     
-    <div class="container">
-        <h2>Отзывы</h2>
-        <div class="reviews">
-            <div class="review">"Благодаря этому сервису я нашел отличную работу за 2 дня!"</div>
-            <div class="review">"Очень удобный бот, сразу пришли актуальные вакансии."</div>
-            <div class="review">"Искал подработку – теперь стабильно зарабатываю дополнительно!"</div>
+    <h2 class="mt-16 text-2xl font-bold shadow-text">Почему выбирают нас?</h2>
+    
+    <section class="flex flex-col md:flex-row justify-around mt-6 px-4">
+        <div class="bg-white bg-opacity-20 p-4 rounded-lg w-64 shadow-text">💼 Удобный поиск: Фильтры по зарплате, графику и местоположению.</div>
+        <div class="bg-white bg-opacity-20 p-4 rounded-lg w-64 shadow-text">🔍 Мы подбираем вакансии под ваш график и навыки.</div>
+        <div class="bg-white bg-opacity-20 p-4 rounded-lg w-64 shadow-text">🏡 Вакансии рядом с домом и с гибкими условиями.</div>
+    </section>
+    
+    <footer class="mt-12 py-6 bg-blue-900 text-white">
+        <h3 class="text-xl shadow-text">Отзывы наших пользователей</h3>
+        <div class="flex flex-col md:flex-row justify-around mt-4 px-4">
+            <div class="w-64 bg-white bg-opacity-20 p-4 rounded-lg">"Благодаря боту нашёл работу за 2 дня!" - Алексей</div>
+            <div class="w-64 bg-white bg-opacity-20 p-4 rounded-lg">"Подобрали отличную подработку, даже не искала!" - Анна</div>
+            <div class="w-64 bg-white bg-opacity-20 p-4 rounded-lg">"Очень удобно, рекомендую всем!" - Сергей</div>
         </div>
-    </div>
+    </footer>
 </body>
 </html>
