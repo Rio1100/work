@@ -1,30 +1,89 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Telegram Бот - Автоаппликации</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobAI - Найди работу с AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #F0F4FF;
+      color: #2D2D2D;
+    }
+    .hero {
+      background: linear-gradient(135deg, #F0F4FF, #E8F0FF);
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 36px;
+      background: linear-gradient(135deg, #6A82FB, #FC5C7D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #555;
+    }
+    .btn {
+      background: linear-gradient(135deg, #6A82FB, #FC5C7D);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .features {
+      display: flex;
+      justify-content: space-around;
+      padding: 50px 20px;
+      background: #FAFAFA;
+    }
+    .feature {
+      text-align: center;
+      max-width: 300px;
+    }
+    .footer {
+      background: #2D2D2D;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
 </head>
-<body class="bg-gradient-to-b from-gray-100 to-blue-200 min-h-screen flex flex-col items-center justify-center">
-    <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-lg">
-        <h1 class="text-2xl font-bold text-center text-blue-600 mb-4">AI Telegram Бот</h1>
-        <p class="text-gray-600 text-center mb-6">Заполните данные, и бот автоматически создаст анкеты и отправит заявки.</p>
-        
-        <form id="applicationForm" class="space-y-4">
-            <input type="text" placeholder="Ваше имя" class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300">
-            <input type="email" placeholder="Email" class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300">
-            <input type="text" placeholder="Телефон" class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300">
-            <textarea placeholder="О себе" class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"></textarea>
-            <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-700">Отправить</button>
-        </form>
+<body>
+  <header>
+    <div class="logo">JobAI</div>
+    <button class="btn">Заполни анкету</button>
+    <button class="btn">Telegram Bot</button>
+  </header>
+  <section class="hero">
+    <h1>Найди идеальную работу или подработку с помощью AI</h1>
+    <p>Один сайт, объединяющий все платформы. Быстро, удобно, персонализировано.</p>
+    <button class="btn">Заполни анкету</button>
+    <button class="btn">Telegram Bot</button>
+  </section>
+  <section class="features">
+    <div class="feature">
+      <h2>AI-подбор</h2>
+      <p>Искусственный интеллект анализирует ваши предпочтения и предлагает лучшие варианты.</p>
     </div>
-
-    <script>
-        document.getElementById('applicationForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Данные отправлены! AI-бот создаст заявку.');
-        });
-    </script>
+    <div class="feature">
+      <h2>Все платформы в одном месте</h2>
+      <p>Больше не нужно искать на разных сайтах — мы объединили всё для вас.</p>
+    </div>
+    <div class="feature">
+      <h2>Гибкость</h2>
+      <p>Есть 2 свободных часа? Начни зарабатывать прямо сейчас!</p>
+    </div>
+  </section>
+  <footer class="footer">
+    <p>© 2023 JobAI. Все права защищены.</p>
+  </footer>
 </body>
 </html>
