@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Telegram Бот - Автоаппликации</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-gray-100 to-blue-200 min-h-screen flex flex-col items-center justify-center">
+    <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-lg">
+        <h1 class="text-2xl font-bold text-center text-blue-600 mb-4">AI Telegram Бот</h1>
+        <p class="text-gray-600 text-center mb-6">Заполните данные, и бот автоматически создаст анкеты и отправит заявки.</p>
+        
+        <form id="applicationForm" class="space-y-4">
+            <input type="text" placeholder="Ваше имя" class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300">
+            <input type="email" placeholder="Email" class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300">
+            <input type="text" placeholder="Telegram-аккаунт (@никнейм)" class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300">
+            <input type="text" placeholder="Город" class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300">
+            <textarea placeholder="Резюме: профессия, степень занятости, кол-во рабочих часов, желаемый доход, о себе"" class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"></textarea>
+            <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-700">Отправить</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('applicationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Данные отправлены! AI-бот создаст заявку.');
+        });
+    </script>
+    <script>
+    document.getElementById('applicationForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        let formData = {
+            name: document.querySelector('input[placeholder="Ваше имя"]').value,
+            email: document.querySelector('input[placeholder="Email"]').value,
+            phone: document.querySelector('input[placeholder="Telegram-аккаунт (@никнейм)"]').value,
+            city: document.querySelector('input[placeholder="Город"]').value,
+            about: document.querySelector('textarea[placeholder="Резюме: профессия, степень занятости, кол-во рабочих часов, желаемый доход, о себе"]').value
+        };
+
+        let response = await fetch("https://marye.pythonanywhere.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            alert("Заявка успешно отправлена!");
+        } else {
+            alert("Ошибка отправки. Попробуйте позже.");
+        }
+    });
+</script>
+
+</body>
+</html>
