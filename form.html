@@ -5,18 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Анкета - JobAI</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Кастомные стили для градиентного текста */
-    .gradient-text {
-      background: linear-gradient(135deg, #6A82FB, #FC5C7D);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  </style>
 </head>
-<body class="bg-[#F0F4FF] min-h-screen flex items-center justify-center p-4">
-  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl border border-[#E8F0FF]">
-    <h1 class="text-3xl font-bold text-center mb-6 gradient-text">
+
+<body class="bg-gradient-to-r from-[#F0F4FF] to-[#E8F0FF] min-h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
+    <h1 class="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-[#6A82FB] to-[#FC5C7D] bg-clip-text text-transparent">
       Заполните анкету
     </h1>
     <form id="applicationForm" class="space-y-6">
@@ -24,42 +17,42 @@
       <div>
         <label for="name" class="block text-sm font-medium text-gray-700">Имя</label>
         <input type="text" id="name" name="name" required
-               class="mt-1 block w-full px-4 py-2 border border-[#E8F0FF] rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
+               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
       </div>
 
       <!-- Электронная почта -->
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700">Электронная почта</label>
         <input type="email" id="email" name="email" required
-               class="mt-1 block w-full px-4 py-2 border border-[#E8F0FF] rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
+               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
       </div>
 
       <!-- Telegram -->
       <div>
         <label for="telegram" class="block text-sm font-medium text-gray-700">Telegram (@никнейм)</label>
         <input type="text" id="telegram" name="telegram" required
-               class="mt-1 block w-full px-4 py-2 border border-[#E8F0FF] rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
+               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
       </div>
 
       <!-- WhatsApp -->
       <div>
         <label for="whatsapp" class="block text-sm font-medium text-gray-700">WhatsApp</label>
         <input type="text" id="whatsapp" name="whatsapp" required
-               class="mt-1 block w-full px-4 py-2 border border-[#E8F0FF] rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
+               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
       </div>
 
       <!-- Профессия -->
       <div>
         <label for="profession" class="block text-sm font-medium text-gray-700">Профессия</label>
         <input type="text" id="profession" name="profession" required
-               class="mt-1 block w-full px-4 py-2 border border-[#E8F0FF] rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
+               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
       </div>
 
       <!-- Степень занятости -->
       <div>
         <label for="employment" class="block text-sm font-medium text-gray-700">Степень занятости</label>
         <select id="employment" name="employment" required
-                class="mt-1 block w-full px-4 py-2 border border-[#E8F0FF] rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
+                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
           <option value="full-time">Полная занятость</option>
           <option value="part-time">Частичная занятость</option>
           <option value="freelance">Фриланс</option>
@@ -70,27 +63,27 @@
       <div>
         <label for="hours" class="block text-sm font-medium text-gray-700">Количество рабочих часов в неделю</label>
         <input type="number" id="hours" name="hours" required
-               class="mt-1 block w-full px-4 py-2 border border-[#E8F0FF] rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
+               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
       </div>
 
       <!-- Желаемый доход -->
       <div>
         <label for="income" class="block text-sm font-medium text-gray-700">Желаемый доход (в месяц)</label>
         <input type="number" id="income" name="income" required
-               class="mt-1 block w-full px-4 py-2 border border-[#E8F0FF] rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
+               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]">
       </div>
 
       <!-- О себе -->
       <div>
         <label for="about" class="block text-sm font-medium text-gray-700">О себе</label>
         <textarea id="about" name="about" rows="4" required
-                  class="mt-1 block w-full px-4 py-2 border border-[#E8F0FF] rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB]"></textarea>
+                  class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#6A82FB] focus:border-[#6A82FB] bg-[#FAFAFA]"></textarea>
       </div>
 
       <!-- Кнопка отправки -->
       <div>
         <button type="submit"
-                class="w-full bg-gradient-to-r from-[#6A82FB] to-[#FC5C7D] text-white px-4 py-2 rounded-md hover:from-[#5A72EB] hover:to-[#EC4C6D] focus:outline-none focus:ring-2 focus:ring-[#6A82FB]">
+                class="w-full bg-gradient-to-r from-[#6A82FB] to-[#FC5C7D] text-white px-4 py-2 rounded-md hover:from-[#5A72EB] hover:to-[#EB4C6D] focus:outline-none focus:ring-2 focus:ring-[#6A82FB]">
           Отправить анкету
         </button>
       </div>
@@ -98,10 +91,11 @@
   </div>
 
   <script>
-    // Обработка отправки формы и отправка данных в Telegram
+    // Обработка отправки формы
     document.getElementById('applicationForm').addEventListener('submit', function (event) {
       event.preventDefault();
 
+      // Сбор данных из формы
       const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
@@ -114,36 +108,23 @@
         about: document.getElementById('about').value,
       };
 
-      // Данные Telegram бота
-      const telegramBotToken = 'ТВОЙ_ТОКЕН_БОТА'; // 7812962283:AAGwkM1DwOgIbB9U4gA4ACOGGZSnoSCjYvI
-      const chatId = 'ТВОЙ_CHAT_ID'; // 7245363747
-
-      // Формируем сообщение
-      const message = `📝 Новая анкета:\n\n👤 Имя: ${formData.name}\n📧 Email: ${formData.email}\n💬 Telegram: ${formData.telegram}\n📱 WhatsApp: ${formData.whatsapp}\n💼 Профессия: ${formData.profession}\n🕒 Занятость: ${formData.employment}\n⌛ Часы в неделю: ${formData.hours}\n💰 Доход: ${formData.income}\n🗒️ О себе: ${formData.about}`;
-
-      // Отправка сообщения через Telegram API
-      fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+      // Отправка данных на сервер (mock API)
+      fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: message,
-        }),
+        body: JSON.stringify(formData),
       })
-      .then(response => response.json())
-      .then(data => {
-        if (data.ok) {
-          alert('Анкета успешно отправлена и доставлена в Telegram!');
-        } else {
-          alert('Произошла ошибка при отправке анкеты в Telegram.');
-        }
-      })
-      .catch(error => {
-        console.error('Ошибка:', error);
-        alert('Ошибка при соединении с Telegram API.');
-      });
+        .then(response => response.json())
+        .then(data => {
+          alert('Анкета успешно отправлена!');
+          console.log('Ответ сервера:', data);
+        })
+        .catch(error => {
+          console.error('Ошибка:', error);
+          alert('Произошла ошибка при отправке анкеты.');
+        });
     });
   </script>
 </body>
