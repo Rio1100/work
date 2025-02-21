@@ -98,11 +98,10 @@
   </div>
 
   <script>
-    // Обработка отправки формы
+    // Обработка отправки формы и отправка данных в Telegram
     document.getElementById('applicationForm').addEventListener('submit', function (event) {
       event.preventDefault();
 
-      // Сбор данных из формы
       const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
@@ -115,23 +114,36 @@
         about: document.getElementById('about').value,
       };
 
-      // Отправка данных на "сервер" (mock API)
-      fetch('https://jsonplaceholder.typicode.com/posts', {
+      // Данные Telegram бота
+      const telegramBotToken = 'ТВОЙ_ТОКЕН_БОТА'; // 7812962283:AAGwkM1DwOgIbB9U4gA4ACOGGZSnoSCjYvI
+      const chatId = 'ТВОЙ_CHAT_ID'; // 7245363747
+
+      // Формируем сообщение
+      const message = `📝 Новая анкета:\n\n👤 Имя: ${formData.name}\n📧 Email: ${formData.email}\n💬 Telegram: ${formData.telegram}\n📱 WhatsApp: ${formData.whatsapp}\n💼 Профессия: ${formData.profession}\n🕒 Занятость: ${formData.employment}\n⌛ Часы в неделю: ${formData.hours}\n💰 Доход: ${formData.income}\n🗒️ О себе: ${formData.about}`;
+
+      // Отправка сообщения через Telegram API
+      fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+        }),
       })
-        .then(response => response.json())
-        .then(data => {
-          alert('Анкета успешно отправлена!');
-          console.log('Ответ сервера:', data);
-        })
-        .catch(error => {
-          console.error('Ошибка:', error);
-          alert('Произошла ошибка при отправке анкеты.');
-        });
+      .then(response => response.json())
+      .then(data => {
+        if (data.ok) {
+          alert('Анкета успешно отправлена и доставлена в Telegram!');
+        } else {
+          alert('Произошла ошибка при отправке анкеты в Telegram.');
+        }
+      })
+      .catch(error => {
+        console.error('Ошибка:', error);
+        alert('Ошибка при соединении с Telegram API.');
+      });
     });
   </script>
 </body>
